@@ -1,0 +1,386 @@
+*,
+html {
+  scroll-behavior: smooth;
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #5F6F52;
+  --lightgreen: #A9B388; 
+}
+
+/* Magnet */
+.magnetic {
+  margin: -100px;
+  padding: 100px;
+  display: inline-block;
+  border-radius: 50%;
+  /*border: 1px solid #000; //use this for debugging*/
+}
+/* Magnet */
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+  padding: 30px 0;
+  position: relative;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .nav-title {
+  width: 155px;
+  overflow: hidden;
+  text-overflow: "";
+  white-space: nowrap;
+  cursor: pointer;
+}
+nav .nav-title h3 {
+  font-weight: 300;
+  color: white;
+}
+
+nav .nav-title h3 a {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+nav .nav-title h3 a::before,
+nav .nav-title h3 a::after {
+ content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+/* nav .nav-title h3 a::before {
+  background-color: #54b3d6;
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+} */
+nav .nav-title h3 a::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform .5s cubic-bezier(1,.03,.1,1.14);
+}
+
+nav .nav-title h3 a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+nav .nav-title h3 a:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+nav .nav-title h3 a span {
+  display: inline-block;
+  transition: transform .5s cubic-bezier(1,.03,.1,1.14);
+}
+
+nav .nav-title h3 a:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+
+
+
+nav .nav-title h3 a {
+  font-size: 16px;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: 300;
+	vertical-align: top;
+}
+
+nav .nav-link .magnetic {
+  /* padding: 10px;
+  height: 40px; */
+  margin: -30px;
+  padding: 30px;
+}
+
+nav .nav-link {
+  width: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 50px;
+}
+
+nav .nav-link a {
+  color: #fff;
+  transition: .3s ease;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+nav .nav-link a:hover {
+  transform: translateY(-10px)
+}
+
+main {
+  overflow: hidden;
+}
+
+section {
+  width: 100%;
+}
+
+.jumbo {
+  background-color: rgb(53, 96, 134);
+  height: 110vh;
+  position: relative;
+  z-index: -99;
+  overflow: hidden;
+}
+
+.jumbo img {
+  width: 40%;
+  position: absolute;
+  filter: saturate(70%);
+}
+
+.jumbo .container {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+}
+
+.jumbo .circle {
+  width: 100px;
+  height: 100px;
+  border: 30px solid rgba(255, 255, 255, 0.664);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -9;
+  right: -200px;
+  top: -200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 90px;
+}
+
+.jumbo .inner-circle {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 153, 0, 0.712);
+  border-radius: 50%;
+  
+}
+
+/* .jumbo img:nth-child(1) {
+  right: 100px;
+  filter: saturate(10%) hue-rotate(50deg) opacity(.3);
+} */
+.jumbo img:nth-child(1) {
+  right: 130px;
+  filter: saturate(100%)  contrast(.1) brightness(.1) opacity(.8);
+}
+.jumbo img:nth-child(2) {
+  filter: saturate(10%) contrast(.8) hue-rotate(190deg);
+  right: 160px;
+}
+
+.text-jumbo{
+  position: absolute;
+  top: 300px;
+  width: 500px;
+}
+.text-jumbo h1 {
+  color: #fff;
+  font-size: clamp(16px, 3vw, 34px);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+.text-jumbo h1 span {
+  font-size: 104px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.text-jumbo-bottom {
+  padding: 20px 0px;
+  transform: rotate(1deg) translateY(-90px);
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: -99;
+}
+
+.text-jumbo-bottom .marquee{
+  padding: 0;
+}
+
+.text-jumbo-bottom h3 {
+  display: inline-block;
+  font-size: 200px;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff49;
+}
+
+/* About */
+.about{
+  padding: 20px 0;
+  margin: 80px 0;
+  position: relative;
+}
+
+.about .container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about .magnetic {
+  position: absolute;
+  padding: 100px;
+  margin: -100px;
+  bottom: 100px;
+  left: 60px;
+  z-index: 1;
+  cursor: default;
+}
+
+.about .magnetic h1 {
+  font-size: 205px;
+  color: rgba(149, 149, 149, 0.482);
+}
+
+.text-sec h1 {
+  font-weight: lighter;
+  color: #fff;
+  font-size: clamp(16px, 2vw, 40px);
+}
+.text-sec p {
+  width: 500px;
+  display: inline-block;
+  font-size: 75px;
+  font-weight: 300;
+  font-family: 'raleway', sans-serif;
+}
+
+.magnet-con {
+  order: 2;
+  margin-right: 100px;
+}
+
+.text-in { 
+  width: 500px;
+  margin-top: 30px;
+  
+  cursor: grab;
+}
+
+.image-about {
+  width: 40%;
+  height: 600px;
+  position: relative;
+  z-index: 99;
+  background-image: url(img/retouch_1683380031988.PNG\(2\).png);
+  background-position: 65%;
+  background-size: 120% 120%;
+  box-shadow: 15px 15px 0 0 rgba(21, 27, 57, 0.815);
+  background-color: #5F6F52;
+  overflow: hidden;
+  transition: .15s ease;
+}
+
+.image-about:hover {
+  transition: .5s ease;
+  box-shadow: 5px 5px 0 0 rgba(35, 45, 97, 0.815);
+}
+
+.image-about img {
+  filter: grayscale(.4);
+  width: 120%;
+  margin-top: -100px;
+  margin-left: -80px;
+}
+/* About
+
+/* Skill */
+
+.skill {
+  padding: 100px 0;
+  cursor: default;
+}
+
+
+.skill h1, .skill h2 {
+  font-family: 'Raleway', sans-serif;
+}
+
+.skill-child {
+  width: 100%; 
+  position: relative;
+  background-color: #e0e5e88b;
+}
+
+.skill-back {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.064);
+  font-size: 300px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.skill-child .title-skill {
+  padding: 40px 0;
+}
+
+.skill-child .title-skill h1 {
+  font-weight: 300;
+  font-size: 54px;
+}
+
+.skill-child .title-skill span {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: #5F6F52;
+}
+
+.skill-child .container .con-skill {
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 80px;
+}
+
+.skill-child .container .con-skill .sec-skill {
+  flex: 1;
+}
+
+.skill-child .container .con-skill .sec-skill h2 {
+  font-weight: 500;
+  font-size: 28px;
+  padding: 30px 0;
+}
+
+.skill-child .container .con-skill .sec-skill p {
+  font-size: 15px;
+  line-height: 25px;
+}
+
+/* Skill */
